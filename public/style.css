@@ -12,8 +12,8 @@
 	--link-color-hover: #d50bb1;
 
 	/* Other Settings: */
-	--font: Times New Roman;
-	--heading-font: Times New Roman;
+	--font: verdana;
+	--heading-font: verdana;
 	--font-size: 14px;
 	--margin: 16px;
 	--padding: 24px;
@@ -31,11 +31,11 @@
 	background: var(--background-color);
 	background-image: url("https://img1.picmix.com/output/stamp/normal/4/4/2/7/2187244_1c022.gif");
 	min-height: 50em;
+	font-family: var(--font);
 	font-size: var(--font-size);
 	margin: 0;
 	padding: var(--margin);
 	color: var(--text-color);
-	font-family: var(--font);
 	line-height: 1.2;
   }
 
@@ -76,11 +76,24 @@
 	background-color: #000000;
 }
 
-  marquee {
+  silly-marquee {
 	position: absolute; /* Keeps the marquee positioned absolutely */
 	pointer-events: none; /* Allow clicks to pass through */
 	/* Add other styles if needed */
 }
+
+.eccentric-text{
+	color:#d50bb1;
+
+}
+
+.floating-image {
+	position: absolute; /* Or 'fixed' if you want it to stay on screen */
+	left: 53em; /* Adjust the left position as needed */
+	top: 4em; /* Adjust the top position as needed */
+	z-index: 999; /* Higher number means it's on top */
+}
+
 
   header {
 	grid-area: header;
@@ -136,7 +149,7 @@
 	padding-left: 0.5em;
   }
 
-  .sidebar-section:not(:last-child) {
+  .sidebar-section {
 	border: var(--border);
 	border-style: dashed;
 	box-sizing: border-box;
@@ -164,6 +177,7 @@
 .buttons-img {
 	display: flex; /* Use flexbox to align items in a row */
 	flex-wrap: wrap; /* Allows wrapping to the next line if they exceed container width */
+	padding-left: 1em;
 }
 
 .buttons-img img {

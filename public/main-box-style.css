@@ -1,0 +1,51 @@
+/* SETTINGS */
+:root {
+	/* Background Colors: */
+	--background-color: #000000;
+	--content-background-color: #000000;
+	--sidebar-background-color: #000000;
+
+	/* Text Colors: */
+	--text-color: #b047d3;
+	--sidebar-text-color: #8533ce;
+	--link-color: #d961dc;
+	--link-color-hover: #d50bb1;
+
+	/* Other Settings: */
+	--font: verdana;
+	--heading-font: verdana;
+	--font-size: 14px;
+	--margin: 16px;
+	--padding: 24px;
+	--border: 2px solid #bd89da;
+	--round-borders: 0px;
+	--sidebar-width: 240px;
+  }
+
+body {
+	display: flex;
+	justify-content: center;
+	background: var(--background-color);
+	/* min-height: 50em; */
+	font-size: var(--font-size);
+	color: var(--text-color);
+	font-family: var(--font);
+	line-height: 1.2;
+	letter-spacing: 0.1em;
+  }
+
+p {
+	margin-bottom: 16px; /* Adds space below paragraphs */
+	line-height: 1.2;
+}
+
+h1 {
+	margin-bottom: 24px; /* Space under the heading */
+	font-family: var(--heading-font);
+}
+
+images {
+	display: flex;
+	width: 80%;
+	height: 50%;
+}
