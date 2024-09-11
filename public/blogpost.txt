@@ -1,4 +1,4 @@
-<h1> blog </h1>
+<h1> blog </h1> <hr>
 
-my goodness. i couldnt find an RTE to HTML editor that could help me automatically upload nice HTML-styled blog automatically into my neocities. 
+<b>9/11/2024:</b> my goodness. i couldnt find an RTE to HTML editor that could help me automatically upload nice HTML-styled blog automatically into my neocities. 
 <br> welp, at least now i could upload from my phone directly to neocities. awesome, right? its pretty simple. i dont always have my laptop with me so this would really help! <br><hr>
