@@ -8,23 +8,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://decohoard.carrd.co/assets/images/gallery126/b147dcf4.gif?v=e0827b7e" rel="icon" type="image/x-icon" />
     <link href="./main-box-style.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+
 </head>
 <body>
     <div>
         <h1>Blog</h1><br>
-        <script>
-            async function loadBlogPost() {
-                try {
-                    const response = await fetch('blogpost.md');
-                    const markdownText = await response.text();
-                    document.getElementById('blog-content').innerHTML = marked(markdownText);
-                } catch (error) {
-                    console.error('Error loading blog post:', error);
-                    document.getElementById('blog-content').innerHTML = 'Error loading blog post';
-                }
+        <div id="blog-content">Loading...</div>
+    <script>
+
+        async function loadTextFile() {
+            try {
+                const response = await fetch('blogpost.txt');
+                const text = await response.text();
+                document.getElementById('blog-content').innerHTML = text;
+            } catch (error) {
+                console.error('Error loading blog post:', error);
+                document.getElementById('blog-content').innerHTML = 'Error loading blog post';
             }
-            loadBlogPost();
-        </script>
+        }
+
+        loadTextFile();
+    </script>
     </div>
 </body>
 </html>
