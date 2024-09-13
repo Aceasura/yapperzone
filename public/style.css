@@ -14,12 +14,12 @@
 	/* Other Settings: */
 	--font: verdana;
 	--heading-font: verdana;
-	--font-size: 14px;
+	--font-size: 12px;
 	--margin: 16px;
 	--padding: 24px;
 	--border: 2px solid #bd89da;
 	--round-borders: 0px;
-	--sidebar-width: 240px;
+	--sidebar-width: 300px;
   }
 
   /* -------------------------------------------------------- */
@@ -30,7 +30,7 @@
 	justify-content: center;
 	background: var(--background-color);
 	background-image: url("https://img1.picmix.com/output/stamp/normal/4/4/2/7/2187244_1c022.gif");
-	min-height: 50em;
+	min-height: 100vh;
 	font-family: var(--font);
 	font-size: var(--font-size);
 	margin: 0;
@@ -40,11 +40,12 @@
   }
 
   ::selection {
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(255, 255, 255, 0.2);
   }
 
   a {
 	text-decoration: underline;
+	font-size: 14px;
   }
 
   a,
@@ -64,12 +65,12 @@
   .layout {
 	display: grid;
 	grid-gap: var(--margin);
-	max-width: 1000px;
+	width: 100%;
 	grid-template:
 		"header header header" auto
 		"leftSidebar main rightSidebar" auto
 		"footer footer footer" auto
-		/ var(--sidebar-width) auto 200px;
+		/ var(--sidebar-width) auto var(--sidebar-width);
   }
 
 .main-content-iframe{
@@ -84,7 +85,7 @@
 
 .eccentric-text{
 	color:#d50bb1;
-
+	display: inline;  /* Keep it in line, darling! */
 }
 
 .floating-image {
@@ -138,12 +139,24 @@
 	justify-content: center;
 	align-items: center;
 	height: 2em; /* Set height as needed */
-	background-color: #7206d0;
+	background-image: url(https://bettysgraphics.neocities.org/images/backgrounds/pattern%20605.gif);
 	color: #ffffff;
 	font-size: 1.2em;
 	font-family: var(--heading-font);
 	box-sizing: border-box;
   }
+
+	#statuscafe {
+    padding: .5em;
+    background-color: rgb(86, 0, 103);
+    border: 1px solid rgb(0, 0, 0);
+}
+#statuscafe-username {
+    margin-bottom: .5em;
+}
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
+}
 
   .sidebar-text {
 	padding-left: 0.5em;
@@ -154,6 +167,7 @@
 	border-style: dashed;
 	box-sizing: border-box;
 	border-color: #7600cb;
+	color: #ffffff;
 	margin-bottom: 1em;
   }
 
@@ -237,6 +251,203 @@
   footer a:focus {
 	color: var(--link-color-hover);
   }
+
+/*-------MUSIC PLAYER BY ibroughtubullets-------*/
+/** if inserting into your css, just add the colors into your own root**/
+:root {
+	/**music player colors, feel free to change**/
+	--playerbg: #000000;
+	--playerborder: #7100e2;
+	--playertext: #d50bb1;
+	--playertitlebg: #000000;
+	--playerbar: #5500f2;
+	--playericons: #bb00c5;
+	}
+
+	.playercontainer {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 95%;
+	height: 80%;
+	background-color: var(--playerbg);
+	border: 3px outset var(--playerborder);
+	padding: 5px;
+	align-content: center;
+	align-items: center;
+	}
+
+	.playercontainer .now-playing {
+	width: 100%;
+	height: 15%;
+	color: var(--playertext);
+	text-align: center;
+	text-justify: center;
+	font-size: .8vw;
+	}
+
+	.playercontainer marquee {
+	width: 70%;
+	height: 35%;
+	border: 3px inset var(--playerborder);
+	background-color: var(--playertitlebg);
+	color: var(--playertext);
+	text-align: center;
+	font-size: 1.15vw;
+	}
+
+	.playercontainer .trackdurationcontrols {
+	width: 100%;
+	height: 25%;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	gap: .4vw;
+	font-size: .85vw;
+	color: var(--playertext);
+	}
+
+	.playercontainer .trackdurationcontrols .bar {
+	width: 60%;
+	margin-left: .1vw;
+	}
+
+	.playercontainer .trackdurationcontrols .time {
+	width: 15%;
+	}
+
+	.playercontainer .trackdurationcontrols #current-time {
+	margin-left: -3px;
+	}
+
+	.playercontainer .trackdurationcontrols #duration {
+	margin-left: -3px;
+	}
+
+	.playercontainer .trackdurationcontrols input[type="range"] {
+	-webkit-appearance: none;
+	background: transparent;
+	display: block;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	}
+
+	/** Chrome, Safari, Opera, and Edge Chromium Track**/
+	.playercontainer .trackdurationcontrols input[type="range"]::-webkit-slider-runnable-track {
+	background: var(--playerbar);
+	height: 0.1rem;
+	width: 100%;
+	}
+
+	/** Firefox Track**/
+	.playercontainer .trackdurationcontrols input[type="range"]::-moz-range-track {
+	background: var(--playerbar);
+	height: 0.1rem;
+	width: 100%;
+	}
+
+	/** Chrome, Safari, Opera, and Edge Chromium Thumb**/
+	.playercontainer .trackdurationcontrols input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	border: .1rem solid var(--playerbar);
+	appearance: none;
+	margin-top: -12px;
+	background-color: var(--playericons);
+	height: .5rem;
+	width: .5rem;
+	}
+
+	/** Firefox Thumb**/
+	.playercontainer .trackdurationcontrols input[type="range"]::-moz-range-thumb {
+	border: .1rem solid var(--playerbar);
+	border-radius: 0;
+	background-color: var(--playericons);
+	height: .5rem;
+	width: .5rem;
+	}
+
+	.playercontainer .trackcontrols {
+	width: inherit;
+	height: 20%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	gap: 5px;
+	margin-top: -5%;
+	}
+
+	.playercontainer .trackcontrols button {
+	color: var(--playericons);
+	font-size: 1.8vw;
+	background-color: transparent;
+	border: none;
+	}
+
+	.playercontainer .creditstooltip {
+	color: var(--playerbar);
+	text-align: right;
+	align-self: flex-end;
+	margin-bottom: -5px;
+	}
+
+	/* Tooltip text */
+	.playercontainer .creditstooltip .playercredits {
+	visibility: hidden;
+	width: 170px;
+	font-size: 10px;
+	background-color: var(--playertitlebg);
+	color: white;
+	text-align: center;
+	padding: 2px 0;
+	border-radius: 2px;
+	margin: 18px 0 0 -162px;
+	position: absolute;
+	z-index: 1;
+	}
+
+	/* Show the tooltip text when you mouse over the tooltip container */
+	.playercontainer .creditstooltip:hover .playercredits {
+	visibility: visible;
+	}
+
+	@media only screen and (max-width: 750px) {
+	 .playercontainer .now-playing {
+	 font-size: 1.7vw;
+	}
+
+	.playercontainer marquee {
+	 font-size: 2.3vw;
+	}
+
+	.playercontainer .trackdurationcontrols {
+	 gap: .4vw;
+	 font-size: 1.7vw;
+	}
+
+	.playercontainer .trackdurationcontrols .bar {
+	 margin-left: .2vw;
+	 margin-right: .3vw;
+	}
+
+	.playercontainer .trackdurationcontrols #current-time {
+	margin-left: -2px;
+	}
+
+	.playercontainer .trackdurationcontrols #duration {
+	margin-left: -3px;
+	}
+
+	.playercontainer .trackcontrols button {
+	 color: var(--playericons);
+	 font-size: 4vw;
+	 background-color: transparent;
+	 border: none;
+	}
+	}
 
   /* -------------------------------------------------------- */
   /* NAVIGATION */
@@ -331,7 +542,7 @@
     width: 100%; /* Make the iframe take full width */
     height: 40em; /* Set a fixed height */
     border: none; /* Remove the border */
-    margin-bottom: 20px; /* Add some space after the iframe */
+    margin-bottom: 50px; /* Add some space after the iframe */
 }
 
   main {
